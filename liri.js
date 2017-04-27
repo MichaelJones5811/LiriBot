@@ -32,10 +32,10 @@ function myTweets(){
 		 myKeys.get("statuses/user_timeline", params, function(error, tweets, response){
 				if(!error){
 					for(tweet in tweets){			
-						var tw = tweets[tweet].text;
+						
 						console.log(tweets[tweet].created_at);
 						console.log(tweets[tweet].text);
-						//console.log(JSON.stringify(tw, null, 2))
+				
 					 	console.log("----------------------------")
 					 	fs.appendFile("log.txt","tweets[tweet].text");
 					 	fs.appendFile("log.txt","tweets[tweet].created_at");
