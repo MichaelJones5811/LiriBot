@@ -1,10 +1,10 @@
 var myTwitter = require("./key.js");
 var twitter = require("twitter");
 var myKeys = myTwitter.twitterKeys;
-var myCustomerKey = myKeys.consumer_key;
-var myConsumerSecret = myKeys.consumer_secret;
-var myAccessTokenKey = myKeys.access_token_key;
-var myAccessTokenSecret = myKeys.access_token_secret;
+// var myCustomerKey = myKeys.consumer_key;
+// var myConsumerSecret = myKeys.consumer_secret;
+// var myAccessTokenKey = myKeys.access_token_key;
+// var myAccessTokenSecret = myKeys.access_token_secret;
 var spotify = require("spotify");
 var request = require('request');
 var fs = require('fs');
@@ -37,6 +37,9 @@ function myTweets(){
 						console.log(tweets[tweet].text);
 						//console.log(JSON.stringify(tw, null, 2))
 					 	console.log("----------------------------")
+					 	fs.appendFile("log.txt","tweets[tweet].text");
+					 	fs.appendFile("log.txt","tweets[tweet].created_at");
+
 					 }
 				}
 				else {
@@ -64,6 +67,12 @@ function mySpotify(userSong){
 		        	console.log("Song Name: " + music[i].name);
 		        	console.log("Preview Link of the song from Spotify: " + music[i].preview_url);
 		        	console.log("Album Name: " + music[i].album.name + "\n");
+
+		        	fs.appendFile('log.txt', "\n");
+		        	fs.appendFile("log.txt", "Artist: " + music[i].artists[j].name);
+		        	fs.appendFile("log.txt", "Song Name: " + music[i].name);
+		        	fs.appendFile("log.txt", "Preview Link of the song from Spotify: " + music[i].preview_url);
+		        	fs.appendFile("Album Name: " + music[i].album.name + "\n");
 			}	
 
 		}
