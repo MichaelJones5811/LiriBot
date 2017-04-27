@@ -1,0 +1,13 @@
+Year: 1989
+Country: USA
+Language: English
+Director: Phil Alden Robinson
+Actors: Kevin Costner, Amy Madigan, Gaby Hoffmann, Ray Liotta
+Plot: An Iowa corn farmer, hearing voices, interprets them as a command to build a baseball diamond in his fields; he does, and the Chicago White Sox come.
+imdbRating: 7.5
+Rotten Tomatoes Rating: N/A
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/field_of_dreams/
+
+Title: Field of Dreams
+
+Rated: PG
