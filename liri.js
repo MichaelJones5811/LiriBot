@@ -15,11 +15,21 @@ function commandLine(){
 	 	myTweets();
 	 }
 	 else if (userInput === "spotify-this-song" ){
-	 	var userSong = process.argv[3];
+	 	//var song = process.argv;
+	 	var userSong = ""
+	 	for (var i = 3; i < process.argv.length; i++){
+	 		userSong += process.argv[i] + " ";	
+	 	}
+	 	//console.log(userSong);
 	 	mySpotify(userSong);
 	 }
 	 else if(userInput === "movie-this"){
-	 	myMovie();
+	 	 var userInput = process.argv;
+    var movie = ""
+    for (var i = 3; i < userInput.length; i++) {
+       movie += userInput[i] + " ";
+      };
+	 	myMovie(movie);
 	 }
 	 else if(userInput === "do-what-it-says"){
 	 	doThis();
@@ -53,6 +63,7 @@ function mySpotify(userSong){
   if (userSong === undefined) {
     userSong = "The Sign Ace of Base";
   }
+	
   spotify.search({ 
 		type: 'track', 
 		query: userSong
@@ -76,12 +87,14 @@ function mySpotify(userSong){
 			}	
 
 		}
+		
+		});
 	
-	});
 }
 
-function myMovie(){
-	var movie = process.argv[3];
+function myMovie(movie){
+	
+	
 	request('http://www.omdbapi.com/?t='+movie+'&y=&plot=short&tomatoes=true&r=json', function (error, response, body) {
 		if(!error) 
 		//JSON.parse the body of the result and store it in the variable json for easier access
