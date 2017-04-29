@@ -20,20 +20,20 @@ function commandLine(){
 	 	for (var i = 3; i < process.argv.length; i++){
 	 		userSong += process.argv[i] + " ";	
 	 	}
-	 	//console.log(userSong);
+	 	
 	 	mySpotify(userSong);
 	 }
 	 else if(userInput === "movie-this"){
 	 	 var userInput = process.argv;
-    var movie = ""
-    for (var i = 3; i < userInput.length; i++) {
-       movie += userInput[i] + " ";
-      };
-	 	myMovie(movie);
-	 }
-	 else if(userInput === "do-what-it-says"){
-	 	doThis();
-	 }
+		 var movie = ""
+		 for (var i = 3; i < userInput.length; i++) {
+		       movie += userInput[i] + " ";
+		      };
+			 	myMovie(movie);
+			 }
+		else if(userInput === "do-what-it-says"){
+			 	doThis();
+			 }
 }
 commandLine();
 function myTweets(){
